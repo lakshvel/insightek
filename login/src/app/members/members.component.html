@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="col-12 header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/dashboard">Home </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/members">Members <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/members">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/members">Profile</a>
+          </li>
+        </ul>
+        <span class="form-inline my-2 my-lg-0">
+          <button class="btn btn-primary float-right mt-2" (click)="logOut()">Log Out</button>
+        </span>
+      </div>
+    </nav>
+  </div>
+
+  
+
+  <div class="row" style="margin: 10rem auto;text-align: center;">
+    <div class="col-2"></div>
+    <div class="col-8">
+     <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Person Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th scope="row">{{user.Personid}}</th>
+            <td>{{user.firstname}}</td>
+            <td>{{user.email}}</td>
+            <td>@{{user.mobilenumber}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
